@@ -1,0 +1,84 @@
+For **`npm init`**, use concise metadata. You can always refine it later before publishing.
+
+**Package name**
+
+```text
+uriel-studio
+```
+
+**Version**
+
+```text
+0.1.0
+```
+
+**Description**
+
+```text
+A VS Code extension for authors, worldbuilders, and storytellers.
+```
+
+**Entry point**
+
+```text
+extension.js
+```
+
+(If you're using TypeScript with the VS Code extension generator, this is less important because the build outputs to `out/extension.js`.)
+
+**Test command**
+
+```text
+```
+
+(Leave blank.)
+
+**Git repository**
+
+```text
+https://github.com/<your-github-username>/uriel-platform.git
+```
+
+(or leave blank if you haven't created the repository yet.)
+
+**Keywords**
+
+```text
+vscode,writing,author,markdown,worldbuilding,storytelling,lore,fantasy,novel,codex
+```
+
+**Author**
+
+```text
+Your Name
+```
+
+**License**
+
+```text
+MIT
+```
+
+### Example
+
+```text
+package name: uriel-studio
+version: 0.1.0
+description: A VS Code extension for authors, worldbuilders, and storytellers.
+entry point: extension.js
+test command:
+git repository:
+keywords: vscode,writing,author,markdown,worldbuilding,storytelling,lore,fantasy,novel,codex
+author: Your Name
+license: MIT
+```
+
+### Note
+
+Since you're building a **VS Code extension**, the recommended starting point is actually:
+
+```bash
+npm init -y
+```
+
+followed by adding the VS Code-specific dependencies and configuration. This is typically simpler than answering all of `npm init`'s prompts interactively.
