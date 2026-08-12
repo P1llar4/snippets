@@ -1,0 +1,399 @@
+At this point, I'd stop thinking of it as a collection of snippets and start thinking of it as an **IDE for authors**. Based on everything you've built, here's the architecture I'd use.
+
+# Uriel Studio v1.0
+
+```
+uriel-platform/
+│
+├── apps/
+│   ├── studio/                 # VS Code Extension
+│   ├── website/
+│   └── docs/
+│
+├── packages/
+│   ├── snippets/
+│   ├── templates/
+│   ├── grammar/
+│   ├── parser/
+│   ├── lsp/
+│   ├── theme/
+│   ├── icons/
+│   ├── codex/
+│   ├── exporter/
+│   └── ai/
+│
+├── scripts/
+│   ├── New-UrielProject.ps1
+│   ├── Update-Snippets.ps1
+│   ├── Build-Codex.ps1
+│   ├── Export-Book.ps1
+│   └── Backup.ps1
+│
+└── examples/
+```
+
+---
+
+# What the extension should eventually do
+
+Instead of only snippets, imagine opening VS Code and seeing:
+
+```
+URIEL STUDIO
+
+📖 Manuscript
+👤 Characters
+🌍 World
+📜 Prophecies
+⚔ Conflicts
+📚 Codex
+🤖 AI Sessions
+📊 Progress
+📦 Export
+```
+
+Everything becomes clickable.
+
+---
+
+# Intelligent Commands
+
+Instead of remembering snippet prefixes, use the Command Palette.
+
+```
+Uriel: New Character
+
+Uriel: New Realm
+
+Uriel: New Artifact
+
+Uriel: New Chapter
+
+Uriel: Continue Scene
+
+Uriel: Generate Timeline
+
+Uriel: Export Novel
+
+Uriel: Validate Lore
+
+Uriel: Build Codex
+
+Uriel: Search Canon
+
+Uriel: Find Contradictions
+```
+
+---
+
+# Sidebar Explorer
+
+Instead of folders only:
+
+```
+Characters
+
+✓ Uriel
+
+✓ Michael
+
+✓ Raphael
+
+✓ Lucifer
+
+Realms
+
+✓ Eden
+
+✓ First Heaven
+
+✓ City of Glass
+
+Artifacts
+
+✓ Crown of Dawn
+
+✓ Seven Keys
+
+✓ Iron Scroll
+
+Prophecies
+
+✓ First Prophecy
+
+✓ Second Seal
+
+✓ Final Decree
+```
+
+Clicking opens the Markdown.
+
+---
+
+# Live Codex
+
+Suppose chapter 18 contains
+
+```
+[[Michael]]
+
+[[Crown of Dawn]]
+
+[[Seven Keys]]
+```
+
+The extension automatically builds
+
+```
+Michael
+
+Appears in:
+
+Chapter 2
+
+Chapter 5
+
+Chapter 18
+
+Relationships
+
+Uriel
+
+Raphael
+
+Lucifer
+
+Artifacts
+
+Crown of Dawn
+```
+
+without any manual work.
+
+---
+
+# Lore Validator
+
+If Chapter 2 says
+
+```
+Uriel has blue wings.
+```
+
+and Chapter 30 says
+
+```
+Uriel's wings have always been gold.
+```
+
+the extension reports
+
+```
+Lore Conflict
+
+Character:
+Uriel
+
+Property:
+Wing Color
+
+Previous:
+Blue
+
+Current:
+Gold
+
+Resolve?
+```
+
+---
+
+# Timeline Generator
+
+Every timeline snippet becomes
+
+```
+Creation
+
+↓
+
+War of Heaven
+
+↓
+
+Exile
+
+↓
+
+The First Scroll
+
+↓
+
+The Seven Seals
+
+↓
+
+The Sovereign Schism
+
+↓
+
+The Restoration
+```
+
+generated automatically.
+
+---
+
+# Character Graph
+
+Imagine clicking **Uriel**.
+
+```
+              Michael
+                  │
+                  │ Ally
+                  │
+Raphael ─── Uriel ─── Lucifer
+                  │
+                  │
+             Seven Keys
+                  │
+             Crown of Dawn
+```
+
+A live relationship graph generated from your Markdown.
+
+---
+
+# AI Workspace
+
+Instead of scattered chats:
+
+```
+AI Session
+
+Prompt
+
+Response
+
+Notes
+
+Accepted
+
+Rejected
+
+Canon Impact
+
+Related Chapters
+```
+
+Every AI interaction becomes searchable.
+
+---
+
+# Scene Planner
+
+```
+Chapter 14
+
+Goal
+
+Conflict
+
+Emotion
+
+Symbols
+
+Foreshadowing
+
+Resolution
+
+Word Count
+```
+
+The extension can show completion percentages.
+
+---
+
+# Writing Dashboard
+
+```
+BOOK ONE
+
+█████████░░░░░░░
+
+61%
+
+Words
+
+92,418
+
+Characters
+
+34
+
+Artifacts
+
+22
+
+Prophecies
+
+15
+
+Open Plot Threads
+
+6
+
+Lore Warnings
+
+2
+```
+
+---
+
+# Export Pipeline
+
+One click generates:
+
+* PDF manuscript
+* DOCX manuscript
+* EPUB
+* HTML
+* Markdown bundle
+* Character encyclopedia
+* Timeline
+* Lore codex
+* Relationship index
+* Prophecy index
+
+---
+
+# Theme
+
+A custom VS Code theme could reinforce the atmosphere:
+
+* Dark parchment background
+* Gold headings
+* Blue links
+* Silver metadata
+* Rune-inspired icons
+* Custom glyphs for artifacts, characters, and prophecies
+
+---
+
+## Suggested Development Roadmap
+
+Rather than trying to build everything at once, I'd break it into milestones:
+
+| Version  | Focus                                                     |
+| -------- | --------------------------------------------------------- |
+| **v0.1** | Project generator, snippets, templates, basic workspace   |
+| **v0.2** | Custom tree view (Characters, Lore, Manuscript)           |
+| **v0.3** | Commands (New Character, New Chapter, Export)             |
+| **v0.4** | Live Codex generation from Markdown links                 |
+| **v0.5** | Timeline builder and relationship graph                   |
+| **v0.6** | Lore validation and consistency checking                  |
+| **v0.7** | AI integration with prompt/history management             |
+| **v1.0** | Full publishing pipeline, dashboards, search, polished UI |
+
+This staged approach keeps the project manageable while delivering useful functionality at each release, instead of waiting until every planned feature is complete.
