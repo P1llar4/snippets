@@ -1,0 +1,75 @@
+uriel.code-snippets
+│
+├── 00_AI_CORE_SNIPPETS
+│   ├── AI Emotion
+│   ├── AI Line
+│   ├── AI Note
+│   ├── AI Question
+│   ├── AI Suggest
+│   ├── AI Thought
+│   └── AI Warning
+│
+├── 01_STYLE_ENGINE
+│   ├── AI Story Prompt: Tone Enforcement
+│   ├── Scene Generation
+│   ├── Lore Expansion
+│   ├── Voice Calibration
+│   └── Epic Description Generator
+│
+├── 02_ARCHIVE_SYSTEM
+│   ├── AI Conversation Archive
+│   ├── AI Log Single Exchange
+│   ├── Chronicle Templates
+│   └── Research Notes
+│
+├── 03_MYTHIC_WRITING_BLOCKS
+│   ├── Canticle Block
+│   ├── Poem Block
+│   ├── Prophecy Block
+│   ├── Prophetic Decree
+│   ├── Ancient Judgment
+│   └── Chanted Meter
+│
+├── 04_LORE_DATABASE
+│   ├── Knowledge Link Entity
+│   ├── Relationship Tie
+│   ├── Prophecy Reference
+│   ├── Codex Entries
+│   ├── Character Encyclopedia
+│   └── Artifact Encyclopedia
+│
+├── 05_GRIMOIRE_ARCHIVE
+│   ├── Seal Records
+│   ├── Sigil Records
+│   ├── Symbol Dictionary
+│   ├── Planetary Correspondence
+│   ├── Manuscript Pages
+│   └── Vault Archives
+│
+├── 06_NARRATIVE_ENGINE
+│   ├── Sovereign Schism Chapters
+│   ├── Uriel First Person Chronicle
+│   ├── Betrayal Scenes
+│   ├── Battles
+│   ├── Revelations
+│   └── Final Choices
+│
+├── 07_WRITER_ROOM
+│   ├── Chapter Expansion
+│   ├── Trilogy Planner
+│   ├── Timeline Builder
+│   ├── Character Maps
+│   ├── Theme Matrix
+│   └── Conflict Engine
+│
+├── 08_PUBLISHING_SUITE
+│   ├── Word Count Tracker
+│   ├── Synopsis
+│   ├── Pitch Deck
+│   ├── Submission Format
+│   └── Revision System
+│
+└── 09_MASTER_CONTROL
+    ├── Daily Writing Session
+    ├── Creative Spark
+    └── Master Writing Directive
