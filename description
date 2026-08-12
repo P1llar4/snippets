@@ -1,0 +1,68 @@
+Here are several description options depending on how you want to position **Uriel Studio**.
+
+### Recommended (VS Marketplace)
+
+```text
+A professional writing environment for authors, worldbuilders, and storytellers. Organize manuscripts, characters, lore, timelines, prophecies, and AI-assisted writing in one integrated VS Code extension.
+```
+
+---
+
+### Short Description (package.json)
+
+```text
+A professional writing environment for authors and worldbuilders.
+```
+
+---
+
+### Feature-Oriented Description
+
+```text
+Uriel Studio transforms Visual Studio Code into a complete writing workspace for novels, series, and fictional universes. Manage manuscripts, chapters, scenes, characters, locations, artifacts, timelines, prophecies, and interconnected lore with built-in templates, snippets, project generation, and publishing tools.
+```
+
+---
+
+### Marketplace Description
+
+```text
+Uriel Studio is an authoring environment built for long-form storytelling.
+
+Features include:
+
+• Project generation
+• Manuscript organization
+• Character and worldbuilding templates
+• Lore and codex management
+• Timeline planning
+• Relationship mapping
+• AI writing workflows
+• Custom snippets
+• Markdown authoring
+• Publishing tools
+• Export support
+• Integrated writing dashboard
+
+Whether you're writing a standalone novel or a multi-book series, Uriel Studio helps keep your story organized, searchable, and consistent.
+```
+
+---
+
+### Vision Statement
+
+```text
+Uriel Studio is a specialized IDE for fiction writing, combining manuscript management, knowledge organization, and authoring tools into a single workspace. Built on Visual Studio Code, it provides a structured environment for creating complex stories while maintaining consistency across characters, settings, timelines, and lore.
+```
+
+## Recommended `package.json`
+
+```json
+{
+  "name": "uriel-studio",
+  "displayName": "Uriel Studio",
+  "description": "A professional writing environment for authors, worldbuilders, and storytellers. Organize manuscripts, characters, lore, timelines, and AI-assisted writing in one integrated VS Code extension."
+}
+```
+
+This description accurately reflects the project's goals without promising features that aren't yet implemented, while leaving room for future expansion.
