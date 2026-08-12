@@ -1,0 +1,203 @@
+Excellent. The goal now is to get **UrielSnips** into a publishable state. Here's a practical checklist.
+
+---
+
+# UrielSnips v0.1
+
+```text
+urielsnips/
+│
+├── package.json
+├── README.md
+├── LICENSE
+├── CHANGELOG.md
+├── .gitignore
+├── .vscodeignore
+│
+├── images/
+│   ├── icon.png
+│   └── banner.png
+│
+└── snippets/
+    ├── ai.code-snippets
+    ├── manuscript.code-snippets
+    ├── world.code-snippets
+    ├── lore.code-snippets
+    ├── publishing.code-snippets
+    ├── planning.code-snippets
+    └── uriel.code-snippets
+```
+
+---
+
+# README
+
+Include sections such as:
+
+```markdown
+# UrielSnips
+
+Professional writing snippets for Visual Studio Code.
+
+## Features
+
+- Character templates
+- Worldbuilding snippets
+- AI prompt library
+- Prophecy blocks
+- Manuscript templates
+- Lore management
+- Planning tools
+- Publishing templates
+
+## Languages
+
+Markdown
+
+## Installation
+
+Install from the Visual Studio Marketplace.
+
+## Snippet Categories
+
+AI
+
+Characters
+
+Worldbuilding
+
+Lore
+
+Publishing
+
+Planning
+
+Manuscripts
+```
+
+---
+
+# CHANGELOG
+
+```markdown
+# Changelog
+
+## 0.1.0
+
+Initial release.
+
+Added:
+
+- AI snippets
+- Lore snippets
+- Character snippets
+- Worldbuilding snippets
+- Planning snippets
+- Publishing snippets
+- Manuscript snippets
+```
+
+---
+
+# .vscodeignore
+
+```text
+.git/
+.github/
+node_modules/
+.vscode/
+tests/
+docs/
+*.ps1
+*.ts
+*.map
+*.log
+```
+
+---
+
+# LICENSE
+
+Use the MIT License if you want broad reuse while retaining attribution.
+
+---
+
+# Marketplace Icon
+
+Create a **128 × 128 px** PNG.
+
+Design suggestion:
+
+* Dark navy background
+* Gold quill
+* Open book
+* Small constellation or star motif
+* Simple enough to remain recognizable at small sizes
+
+---
+
+# Snippet Organization
+
+Instead of a single large file, split snippets by purpose:
+
+```text
+snippets/
+
+ai.code-snippets
+manuscript.code-snippets
+characters.code-snippets
+worldbuilding.code-snippets
+lore.code-snippets
+planning.code-snippets
+publishing.code-snippets
+```
+
+This keeps maintenance manageable.
+
+---
+
+# Publish Workflow
+
+Once you're ready:
+
+```bash
+npm install -g @vscode/vsce
+```
+
+Package the extension:
+
+```bash
+vsce package
+```
+
+This creates a `.vsix` file for local testing.
+
+When satisfied:
+
+```bash
+vsce publish
+```
+
+---
+
+# Milestones
+
+### v0.1
+
+* Snippet library
+* Marketplace listing
+* Documentation
+
+### v0.2
+
+* Additional snippet packs
+* Improved documentation
+* Screenshots and examples
+
+### v1.0
+
+* Stable, comprehensive snippet collection
+* Community contributions
+* Regular updates
+
+This gives you a solid, maintainable foundation while you continue developing the more ambitious **Uriel Studio** extension.
