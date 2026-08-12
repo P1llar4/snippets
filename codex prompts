@@ -1,0 +1,839 @@
+# UrielSnips — Codex Build Prompt Set
+
+These are structured for **Codex** and can be run sequentially in the `P1llar4/uriel-studio` repository. The goal is to have Codex inspect the existing work first, then build rather than overwrite it.
+
+## 1. Repository Audit
+
+```text
+You are the lead engineer for UrielSnips, a VS Code extension for authors, worldbuilders, novelists, and storytellers.
+
+Repository:
+https://github.com/P1llar4/uriel-studio.git
+
+Project:
+UrielSnips
+
+Package name:
+urielsnips
+
+Display name:
+UrielSnips
+
+Author:
+Kadi Heinz
+
+Publisher:
+P1llar4
+
+License:
+MIT
+
+Primary purpose:
+Provide a comprehensive, professional VS Code snippet library for writing, manuscript development, worldbuilding, lore, AI-assisted writing, planning, and publishing.
+
+Before modifying files:
+
+1. Inspect the repository recursively.
+2. Inspect package.json.
+3. Inspect all existing .code-snippets files.
+4. Inspect README.md and documentation.
+5. Inspect Git status.
+6. Identify the current branch.
+7. Identify existing build/test scripts.
+8. Identify dependencies.
+9. Identify duplicate or conflicting snippets.
+10. Identify invalid JSON or invalid VS Code snippet syntax.
+
+Important:
+- Preserve useful existing work.
+- Do not delete files simply to simplify the project.
+- Do not replace existing snippets without checking them.
+- Do not publish anything.
+- Do not push changes to GitHub.
+- Do not make destructive changes.
+
+Return an architecture report containing:
+
+CURRENT STRUCTURE
+CURRENT PACKAGE CONFIGURATION
+CURRENT SNIPPET COUNT
+CURRENT SNIPPET FILES
+DUPLICATE PREFIXES
+INVALID FILES
+BUILD STATUS
+TEST STATUS
+RECOMMENDED NEXT STEPS
+```
+
+---
+
+# 2. Establish UrielSnips
+
+```text
+Implement the UrielSnips extension foundation based on the existing repository.
+
+Requirements:
+
+name:
+urielsnips
+
+displayName:
+UrielSnips
+
+version:
+0.1.0
+
+description:
+A professional collection of VS Code writing snippets for authors, worldbuilders, and storytellers.
+
+publisher:
+P1llar4
+
+author:
+Kadi Heinz
+
+license:
+MIT
+
+repository:
+https://github.com/P1llar4/uriel-studio.git
+
+UrielSnips is currently a snippet-focused VS Code extension.
+
+Do not add runtime application code unless required.
+
+Create or correct:
+
+package.json
+README.md
+CHANGELOG.md
+LICENSE
+.gitignore
+.vscodeignore
+
+Create:
+
+snippets/
+
+The package must contribute its snippet files through VS Code's contributes.snippets configuration.
+
+Use Markdown as the initial supported language.
+
+Avoid unnecessary dependencies.
+
+Make sure the project can eventually be packaged with:
+
+npx @vscode/vsce package
+
+Do not publish.
+
+After implementation:
+
+1. Validate package.json.
+2. Validate snippet JSON.
+3. Run available tests.
+4. Package a VSIX if possible.
+5. Report the results.
+```
+
+---
+
+# 3. Organize Existing Snippets
+
+```text
+Refactor the existing UrielSnips snippets into maintainable categories.
+
+Create:
+
+snippets/
+├── ai.code-snippets
+├── manuscript.code-snippets
+├── characters.code-snippets
+├── worldbuilding.code-snippets
+├── lore.code-snippets
+├── planning.code-snippets
+├── publishing.code-snippets
+└── uriel.code-snippets
+
+Preserve all existing valid snippets.
+
+Known existing snippets include:
+
+AI Emotion
+AI Line
+AI Note
+AI Question
+AI Suggest
+AI Thought
+AI Warning
+
+AI Story Prompt: Tone Enforcement
+AI Story Prompt: Scene Generation
+AI Story Prompt: Lore Expansion
+AI Conversation Archive
+AI Log: Single Exchange
+
+Ancient Judgment
+Canticle Block
+Chanted Meter
+Elemental Contrast
+
+Knowledge Link: Standard Entity
+Knowledge Link: Relational Tie
+Knowledge Link: Prophetic Reference
+
+Poem Block
+Prophecy Block
+Prophetic Decree
+User Line
+
+Uriel Character Core
+Archangel Profile
+Cosmic Law Record
+Sovereign Schism Record
+Act Structure
+Book Blueprint
+Chapter Beat Sheet
+Prophetic Character Destiny
+Cosmic Conflict Map
+
+Manuscript Header
+Chapter Continuation
+Scene Expansion
+Ending Generator
+Epilogue Template
+Final Decree
+Book Closing Passage
+Author Notes
+Revision Marker
+Canon Lock
+
+Daily Writing Session
+Creative Spark
+Final Author Command
+
+Audit every prefix.
+
+If prefixes collide, resolve collisions carefully and preserve backward compatibility where possible.
+
+Validate every resulting .code-snippets file.
+
+Return a categorized snippet inventory.
+```
+
+---
+
+# 4. Build the Authoring Toolkit
+
+```text
+Expand UrielSnips into a comprehensive writing toolkit.
+
+Do not remove existing snippets.
+
+Add useful, practical snippets for:
+
+MANUSCRIPT
+
+novel outline
+series outline
+book outline
+chapter outline
+scene outline
+opening hook
+midpoint
+climax
+chapter ending
+chapter summary
+revision pass
+continuity check
+scene checklist
+
+CHARACTERS
+
+character profile
+protagonist
+antagonist
+supporting character
+character arc
+character wound
+character desire
+character fear
+character secret
+character relationship
+character voice
+character introduction
+character transformation
+character death
+
+WORLDBUILDING
+
+realm
+kingdom
+city
+location
+culture
+religion
+political system
+government
+faction
+organization
+military order
+magic system
+technology
+economy
+language
+calendar
+geography
+
+LORE
+
+historical event
+myth
+legend
+sacred text
+artifact
+relic
+ritual
+covenant
+law
+prophecy
+omen
+forbidden knowledge
+lost civilization
+ancient war
+
+PLOT
+
+conflict
+subplot
+plot thread
+mystery
+reveal
+foreshadowing
+red herring
+reversal
+betrayal
+sacrifice
+consequence
+resolution
+
+SYMBOLISM
+
+symbol
+motif
+recurring image
+color symbolism
+elemental symbolism
+numerical symbolism
+dream symbol
+prophetic symbol
+
+AI
+
+AI rewrite
+AI expand
+AI condense
+AI brainstorm
+AI critique
+AI continuity check
+AI character analysis
+AI lore analysis
+AI scene generation
+AI dialogue generation
+AI description generation
+AI prophecy generation
+AI style enforcement
+AI prompt chain
+
+PLANNING
+
+daily writing session
+weekly writing plan
+monthly writing goal
+word-count tracker
+project milestone
+revision plan
+research note
+creative spark
+idea capture
+
+PUBLISHING
+
+synopsis
+query
+pitch
+blurb
+back-cover copy
+author bio
+dedication
+acknowledgments
+copyright page
+title page
+table of contents
+
+Every snippet must contain:
+
+- unique name
+- unique prefix
+- useful description
+- meaningful placeholders
+- correct tab stops
+- $0 final cursor position where appropriate
+- valid JSON
+- correct category
+
+Do not create filler snippets merely to increase the count.
+
+Favor quality and practical usability.
+```
+
+---
+
+# 5. Build the Uriel Mythic Toolkit
+
+```text
+Create a specialized Uriel Chronicles snippet layer.
+
+These snippets should complement the general writing toolkit rather than replace it.
+
+Add snippets for:
+
+CELESTIAL
+
+archangel
+angelic order
+heavenly office
+celestial hierarchy
+heavenly realm
+divine decree
+celestial trial
+celestial council
+
+COSMIC
+
+cosmic law
+cosmic balance
+primordial force
+creation event
+destruction event
+cosmic conflict
+metaphysical principle
+
+PROPHETIC
+
+prophecy
+revelation
+oracle
+omen
+vision
+seal
+scroll
+decree
+covenant
+judgment
+
+URIEL
+
+Uriel profile
+Uriel title
+Uriel revelation
+Uriel vision
+Uriel dialogue
+Uriel decree
+Uriel transformation
+Uriel sacrifice
+Uriel confrontation
+Uriel destiny
+
+SCHISM
+
+Sovereign Schism
+faction division
+ideological conflict
+betrayal
+rebellion
+exile
+judgment
+restoration
+
+MYTHIC PROSE
+
+invocation
+canticle
+lament
+sacred inscription
+ancient chronicle
+prophetic passage
+ceremonial dialogue
+mythic description
+
+Maintain coherent terminology.
+
+Do not force archaic language into every snippet.
+
+These are writing tools, not generated prose.
+```
+
+---
+
+# 6. Create Documentation
+
+```text
+Create a polished README.md for UrielSnips.
+
+Include:
+
+# UrielSnips
+
+## Overview
+
+## Features
+
+## Installation
+
+## Usage
+
+## Snippet Categories
+
+## Prefix Reference
+
+## Examples
+
+## Supported File Types
+
+## Project Structure
+
+## Contributing
+
+## Bug Reports
+
+## Feature Requests
+
+## Roadmap
+
+## License
+
+Explain how to trigger snippets in VS Code.
+
+Include examples such as:
+
+aie
+ai
+aiq
+aistyle
+aiscene
+ailore
+writingday
+spark
+character
+chapter
+scene
+prophecy
+artifact
+realm
+canonlock
+
+Do not claim functionality that has not been implemented.
+
+Repository:
+
+https://github.com/P1llar4/uriel-studio
+```
+
+---
+
+# 7. Automated Validation
+
+```text
+Create a validation system for the UrielSnips snippet library.
+
+The validator should inspect every .code-snippets file and detect:
+
+1. Invalid JSON.
+2. Duplicate snippet names.
+3. Duplicate prefixes.
+4. Missing prefixes.
+5. Missing bodies.
+6. Missing descriptions.
+7. Invalid tab-stop syntax.
+8. Invalid choice syntax.
+9. Broken escape sequences.
+10. Empty snippet bodies.
+11. Unsupported snippet constructs where detectable.
+
+Add an appropriate npm script:
+
+npm test
+
+or:
+
+npm run validate
+
+The validation must run without requiring VS Code itself.
+
+Make the validator useful for future development.
+
+Run the validator against the complete current library.
+
+Fix every error that can safely be fixed.
+
+Report:
+
+snippet files
+total snippets
+duplicate prefixes
+validation errors
+warnings
+final validation status
+```
+
+---
+
+# 8. Package the Extension
+
+```text
+Prepare UrielSnips for local VSIX testing.
+
+Install only necessary development dependencies.
+
+Ensure package.json contains the correct extension metadata.
+
+Run:
+
+npm install
+
+npm test
+
+npx @vscode/vsce package
+
+Inspect the generated VSIX.
+
+Verify that:
+
+- package.json is included
+- all snippet files are included
+- README.md is included
+- LICENSE is included
+- unnecessary development files are excluded
+- the VSIX has the expected extension identifier
+
+Do not publish.
+
+If packaging fails, diagnose and fix the problem, then package again.
+
+Do not declare success until a VSIX is successfully produced.
+```
+
+---
+
+# 9. GitHub Project Hygiene
+
+```text
+Prepare the UrielSnips repository for open-source development.
+
+Create or update:
+
+.gitignore
+.vscodeignore
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+.github/pull_request_template.md
+
+Create issue templates for:
+
+Bug Report
+Snippet Request
+Feature Request
+
+Keep these documents concise and appropriate for an open-source VS Code extension.
+
+Do not add unnecessary governance or infrastructure.
+
+Do not push changes.
+
+At the end:
+
+git status
+
+Report every modified, added, and untracked file.
+```
+
+---
+
+# 10. Marketplace Preparation
+
+```text
+Prepare UrielSnips for eventual VS Code Marketplace publication.
+
+Review:
+
+package.json
+README.md
+CHANGELOG.md
+LICENSE
+.vscodeignore
+
+Verify:
+
+name = urielsnips
+displayName = UrielSnips
+version = 0.1.0
+publisher = P1llar4
+license = MIT
+repository = https://github.com/P1llar4/uriel-studio.git
+
+Use appropriate:
+
+keywords
+categories
+gallery metadata
+
+Do not invent Marketplace credentials.
+
+Do not publish.
+
+Create:
+
+docs/release-checklist.md
+
+Include:
+
+- local installation
+- VSIX testing
+- Git commit
+- Git tag
+- GitHub release
+- Marketplace publisher account
+- Personal Access Token
+- vsce login
+- vsce publish
+- post-publication verification
+
+The checklist should distinguish between actions Codex can perform locally and actions requiring the account owner.
+```
+
+---
+
+# 11. Final Release Audit
+
+```text
+Act as the release engineer for UrielSnips.
+
+Perform a complete pre-release audit.
+
+Repository:
+https://github.com/P1llar4/uriel-studio.git
+
+Do not publish or push anything.
+
+Inspect the complete repository.
+
+Run:
+
+git status
+npm install
+npm test
+npx @vscode/vsce package
+
+Then inspect the resulting VSIX.
+
+Verify:
+
+1. package.json
+2. extension metadata
+3. snippet contribution paths
+4. every .code-snippets file
+5. snippet count
+6. duplicate prefixes
+7. duplicate names
+8. README
+9. CHANGELOG
+10. LICENSE
+11. .gitignore
+12. .vscodeignore
+13. VSIX contents
+14. repository cleanliness
+
+Fix safe errors automatically.
+
+After fixing anything, rerun the complete validation.
+
+Return exactly this report structure:
+
+URIELSNIPS RELEASE AUDIT
+
+Repository:
+Version:
+
+BUILD:
+PASS/FAIL
+
+TESTS:
+PASS/FAIL
+
+VSIX:
+PASS/FAIL
+
+SNIPPET FILES:
+<number>
+
+TOTAL SNIPPETS:
+<number>
+
+DUPLICATE PREFIXES:
+<number>
+
+VALIDATION ERRORS:
+<number>
+
+WARNINGS:
+<number>
+
+FILES ADDED:
+<list>
+
+FILES MODIFIED:
+<list>
+
+FILES UNTRACKED:
+<list>
+
+REMAINING ISSUES:
+<list>
+
+NEXT ACTION:
+<single recommended action>
+```
+
+---
+
+## Codex Execution Order
+
+Run them in this order:
+
+```text
+01  Repository Audit
+ ↓
+02  Extension Foundation
+ ↓
+03  Snippet Organization
+ ↓
+04  Authoring Toolkit
+ ↓
+05  Uriel Mythic Toolkit
+ ↓
+06  Documentation
+ ↓
+07  Automated Validation
+ ↓
+08  VSIX Packaging
+ ↓
+09  GitHub Hygiene
+ ↓
+10  Marketplace Preparation
+ ↓
+11  Final Release Audit
+```
+
+The important distinction is that **Codex should be allowed to inspect and test between stages**, rather than receiving one giant prompt to build everything blindly. This also gives a clean point at which to stop if the existing `uriel-studio` repository turns out to contain conflicting work.
