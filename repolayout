@@ -1,0 +1,262 @@
+Yes. Based on your previous planning, the correct place to start is **Sprint 0**, not with features. The first milestone should produce a working VS Code extension that loads, contributes commands, and has a clean architecture. Everything else builds on that.
+
+## Sprint 0 Deliverables
+
+```text
+✔ Repository
+✔ VS Code Extension
+✔ TypeScript
+✔ Build System
+✔ Activity Bar
+✔ Sidebar
+✔ Commands
+✔ Tree View
+✔ Project Generator
+✔ Snippet Loader
+✔ GitHub Actions
+✔ Documentation
+```
+
+---
+
+# Repository Layout
+
+```text
+uriel-platform/
+│
+├── .github/
+│   └── workflows/
+│       └── build.yml
+│
+├── apps/
+│   └── studio/
+│       ├── src/
+│       │   ├── extension.ts
+│       │   ├── commands/
+│       │   ├── providers/
+│       │   ├── views/
+│       │   ├── project/
+│       │   ├── snippets/
+│       │   ├── templates/
+│       │   └── utils/
+│       │
+│       ├── media/
+│       ├── package.json
+│       ├── tsconfig.json
+│       └── README.md
+│
+├── packages/
+│   ├── snippets/
+│   ├── templates/
+│   ├── grammar/
+│   ├── parser/
+│   ├── theme/
+│   └── shared/
+│
+├── scripts/
+└── docs/
+```
+
+---
+
+# First Commands
+
+These are enough to validate the extension architecture:
+
+```text
+Uriel: New Project
+
+Uriel: New Chapter
+
+Uriel: New Character
+
+Uriel: New Scene
+
+Uriel: Build Codex
+
+Uriel: Export
+```
+
+Only **New Project** needs to work initially.
+
+---
+
+# First Sidebar
+
+```text
+📖 Manuscript
+
+👤 Characters
+
+🌍 World
+
+📜 Prophecies
+
+📚 Codex
+```
+
+Initially, these can contain placeholder nodes.
+
+---
+
+# Sprint 0 Tasks
+
+### Task 1
+
+Create the extension.
+
+```bash
+npm init
+```
+
+---
+
+### Task 2
+
+Install dependencies.
+
+```bash
+npm install
+```
+
+---
+
+### Task 3
+
+Register commands.
+
+```typescript
+registerCommand("uriel.newProject")
+
+registerCommand("uriel.newCharacter")
+
+registerCommand("uriel.newScene")
+```
+
+---
+
+### Task 4
+
+Add Activity Bar.
+
+```
+Uriel Studio
+```
+
+with a custom icon.
+
+---
+
+### Task 5
+
+Create TreeDataProvider.
+
+```text
+Manuscript
+
+Characters
+
+World
+
+Prophecies
+
+Codex
+```
+
+---
+
+### Task 6
+
+Create Project Generator.
+
+When executed:
+
+```
+Uriel: New Project
+```
+
+creates
+
+```text
+URIEL_CHRONICLES/
+```
+
+and the folders automatically.
+
+---
+
+### Task 7
+
+Load snippets.
+
+Copy
+
+```
+uriel.code-snippets
+```
+
+into
+
+```
+.vscode/
+```
+
+---
+
+### Task 8
+
+Create templates.
+
+```
+chapter.md
+
+character.md
+
+scene.md
+
+artifact.md
+```
+
+---
+
+### Task 9
+
+Build.
+
+```
+F5
+```
+
+opens Extension Development Host.
+
+---
+
+# After Sprint 0
+
+Only after the extension is stable should you move on to:
+
+* Markdown parser
+* Codex builder
+* Timeline engine
+* Lore validator
+* AI workspace
+* Relationship graph
+* Export engine
+
+## Recommendation
+
+Because this project will eventually span dozens of files, it's more practical to build it as a real codebase rather than generating it piece by piece in chat.
+
+A good next milestone is to generate the complete **v0.1 repository** with:
+
+* all directories,
+* `package.json`,
+* `tsconfig.json`,
+* `extension.ts`,
+* command registrations,
+* sidebar provider,
+* project generator,
+* build configuration,
+* and GitHub Actions.
+
+That gives you a project you can open in VS Code, press **F5**, and immediately start extending rather than assembling files manually.
