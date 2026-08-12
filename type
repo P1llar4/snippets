@@ -1,0 +1,26 @@
+For a **VS Code extension**, use:
+
+```text
+type: module
+```
+
+This aligns with modern Node.js and TypeScript development and is the recommended direction for new projects.
+
+Your initial `package.json` would look something like:
+
+```json
+{
+  "name": "uriel-studio",
+  "displayName": "Uriel Studio",
+  "version": "0.1.0",
+  "description": "A VS Code extension for authors, worldbuilders, and storytellers.",
+  "type": "module",
+  "license": "MIT"
+}
+```
+
+### One note
+
+If you generated the project using **Yeoman's VS Code Extension Generator** (`yo code`), it may scaffold the project using **CommonJS** instead of ES modules, in which case `"type"` is typically omitted.
+
+If you're building the extension manually from scratch—as your project plan suggests—then `"type": "module"` is the better choice. It will influence how you write imports/exports and how you configure TypeScript, so it's best to decide at the start and stay consistent.
