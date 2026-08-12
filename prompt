@@ -1,0 +1,67 @@
+createw ps1 file to make folder structure {
+	"Daily Writing Session": {
+		"prefix": "writingday",
+		"body": [
+			"# Writing Session",
+			"",
+			"Date:",
+			"${1:Date}",
+			"",
+			"Current Objective:",
+			"${2:Goal}",
+			"",
+			"Scene Written:",
+			"${3:Scene}",
+			"",
+			"New Discoveries:",
+			"${4:Ideas}",
+			"",
+			"Next Session:",
+			"${5:Next step}",
+			"$0"
+		],
+		"description": "Tracks writing sessions"
+	},
+
+	"Creative Spark": {
+		"prefix": "spark",
+		"body": [
+			"# Creative Spark",
+			"",
+			"Image:",
+			"${1:Vision}",
+			"",
+			"Emotion:",
+			"${2:Feeling}",
+			"",
+			"Possible Story Use:",
+			"${3:Application}",
+			"$0"
+		],
+		"description": "Captures sudden ideas"
+	},
+
+	"Final Author Command": {
+		"prefix": "mastercommand",
+		"body": [
+			"**MASTER WRITING DIRECTIVE**",
+			"",
+			"Create a passage from the Uriel Chronicles.",
+			"",
+			"Required:",
+			"- Mythic scale",
+			"- Strong symbolism",
+			"- Emotional depth",
+			"- Internal consistency",
+			"- Memorable imagery",
+			"",
+			"Subject:",
+			"${1:Topic}",
+			"",
+			"Desired outcome:",
+			"${2:Scene purpose}",
+			"$0"
+		],
+		"description": "Universal Uriel writing command"
+	}
+}
