@@ -1,0 +1,135 @@
+For a VS Code extension intended for long-term publication, use a package name that is simple, searchable, and unlikely to conflict with existing extensions.
+
+## Recommended
+
+**Extension Display Name**
+
+```text
+Uriel Studio
+```
+
+**Publisher** (VS Marketplace)
+
+```text
+uriel
+```
+
+or
+
+```text
+uriel-studio
+```
+
+**Package Name**
+
+```text
+uriel-studio
+```
+
+**Extension ID**
+
+```text
+uriel.uriel-studio
+```
+
+---
+
+## npm Package
+
+If you publish shared libraries later:
+
+```text
+@uriel/core
+@uriel/parser
+@uriel/lsp
+@uriel/theme
+@uriel/templates
+@uriel/snippets
+@uriel/codex
+@uriel/exporter
+@uriel/shared
+```
+
+---
+
+## Monorepo
+
+```text
+uriel-platform
+```
+
+Inside:
+
+```text
+apps/
+    studio/
+
+packages/
+    core/
+    parser/
+    grammar/
+    lsp/
+    snippets/
+    templates/
+    codex/
+    exporter/
+    ai/
+    theme/
+    shared/
+```
+
+---
+
+## package.json
+
+```json
+{
+  "name": "uriel-studio",
+  "displayName": "Uriel Studio",
+  "description": "An immersive authoring environment for worldbuilding, manuscripts, codices, and AI-assisted storytelling.",
+  "publisher": "uriel",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "writing",
+    "novel",
+    "author",
+    "markdown",
+    "worldbuilding",
+    "codex",
+    "story",
+    "lore",
+    "fantasy",
+    "manuscript"
+  ]
+}
+```
+
+---
+
+## GitHub Repository
+
+```text
+github.com/uriel/uriel-platform
+```
+
+or, if using a personal account:
+
+```text
+github.com/<your-username>/uriel-platform
+```
+
+---
+
+## Marketplace Branding
+
+* **Name:** Uriel Studio
+* **Tagline:** *Professional writing tools for novels, lore, and worldbuilding.*
+* **Short Identifier:** `uriel-studio`
+
+This naming leaves room for future packages like **Uriel Theme**, **Uriel Language**, or **Uriel Exporter** while keeping the main extension focused on the integrated writing environment.
