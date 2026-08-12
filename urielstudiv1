@@ -1,0 +1,27 @@
+uriel-platform/
+│
+├── apps/
+│   ├── studio/                 # VS Code Extension
+│   ├── website/
+│   └── docs/
+│
+├── packages/
+│   ├── snippets/
+│   ├── templates/
+│   ├── grammar/
+│   ├── parser/
+│   ├── lsp/
+│   ├── theme/
+│   ├── icons/
+│   ├── codex/
+│   ├── exporter/
+│   └── ai/
+│
+├── scripts/
+│   ├── New-UrielProject.ps1
+│   ├── Update-Snippets.ps1
+│   ├── Build-Codex.ps1
+│   ├── Export-Book.ps1
+│   └── Backup.ps1
+│
+└── examples/
