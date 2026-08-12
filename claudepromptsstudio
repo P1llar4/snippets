@@ -1,0 +1,1538 @@
+# Uriel Studio — Claude Code Build Prompt Set
+
+Use these with **Claude Code** in the `uriel-studio` repository. They are deliberately staged so Claude inspects the existing project before making architectural changes.
+
+**Repository:** `P1llar4/uriel-studio`
+**Extension:** `uriel-studio`
+**Package:** `uriel-studio`
+**Display name:** `Uriel Studio`
+**Publisher:** `P1llar4`
+**Author:** `Kadi Heinz`
+
+---
+
+## 01 — Genesis / Repository Audit
+
+```text
+You are the lead engineer for Uriel Studio.
+
+Repository:
+https://github.com/P1llar4/uriel-studio.git
+
+Uriel Studio is a professional authoring environment for Visual Studio Code.
+
+Its long-term purpose is to support:
+
+- novel and manuscript writing
+- chapters and scenes
+- characters
+- locations
+- factions
+- artifacts
+- lore
+- timelines
+- relationships
+- worldbuilding
+- symbolic systems
+- AI-assisted writing
+- continuity checking
+- knowledge management
+- publishing and export
+
+IMPORTANT:
+
+Before changing anything, inspect the repository thoroughly.
+
+Inspect:
+
+1. Complete directory tree.
+2. Every package.json.
+3. Every tsconfig.json.
+4. pnpm-workspace.yaml.
+5. turbo.json.
+6. Existing TypeScript.
+7. Existing VS Code extension files.
+8. Existing snippets.
+9. Existing language definitions.
+10. Existing parser code.
+11. Existing tests.
+12. README and documentation.
+13. Git status.
+14. Existing scripts.
+15. Dependencies.
+
+Determine:
+
+- what already works
+- what is incomplete
+- what is broken
+- what should be preserved
+- what should be refactored
+- what is missing
+
+Do NOT:
+
+- delete useful existing work
+- rewrite the entire repository
+- introduce unnecessary dependencies
+- publish anything
+- push anything to GitHub
+- invent functionality and claim it exists
+
+First produce:
+
+ARCHITECTURE AUDIT
+CURRENT STRUCTURE
+WORKING COMPONENTS
+BROKEN COMPONENTS
+BUILD STATUS
+TYPECHECK STATUS
+TEST STATUS
+DEPENDENCY PROBLEMS
+ARCHITECTURAL RISKS
+RECOMMENDED SPRINT ORDER
+
+Do not perform major implementation until this audit is complete.
+```
+
+---
+
+# 02 — Genesis Foundation
+
+```text
+Using the repository audit, establish a clean Uriel Studio engineering foundation.
+
+Target architecture:
+
+uriel-studio/
+
+├── apps/
+│   └── studio/
+
+├── packages/
+│   ├── core/
+│   ├── entities/
+│   ├── language/
+│   ├── parser/
+│   ├── lsp/
+│   ├── snippets/
+│   ├── templates/
+│   ├── ui/
+│   ├── theme/
+│   ├── icons/
+│   ├── ai/
+│   ├── exporter/
+│   └── shared/
+
+├── docs/
+├── scripts/
+├── tests/
+
+├── package.json
+├── pnpm-workspace.yaml
+├── turbo.json
+├── tsconfig.json
+├── .gitignore
+└── README.md
+
+Use:
+
+- Node.js
+- TypeScript
+- pnpm
+- Turborepo
+
+Preserve existing packages when they already serve these purposes.
+
+Do not create duplicate packages.
+
+Workspace packages should use:
+
+@uriel/*
+
+Examples:
+
+@uriel/core
+@uriel/entities
+@uriel/language
+@uriel/parser
+@uriel/lsp
+@uriel/snippets
+@uriel/templates
+@uriel/ui
+@uriel/theme
+@uriel/icons
+@uriel/ai
+@uriel/exporter
+@uriel/shared
+
+The VS Code extension lives at:
+
+apps/studio
+
+The extension should ultimately compile to:
+
+out/extension.js
+
+First objective:
+
+A clean, installable, type-checkable, buildable monorepo.
+
+Do not implement advanced features yet.
+
+Run the appropriate install, typecheck, test, and build commands after implementation.
+```
+
+---
+
+# 03 — TypeScript / Dependency Repair
+
+```text
+Make the Uriel Studio workspace compile cleanly.
+
+Run the existing validation commands before modifying anything.
+
+Fix root causes involving:
+
+- missing workspace packages
+- incorrect package names
+- broken imports
+- tsconfig paths
+- project references
+- ESM/CommonJS mismatches
+- package exports
+- VS Code typings
+- malformed package.json files
+- circular dependencies
+
+Do not solve errors by hiding them.
+
+Avoid unnecessary:
+
+any
+@ts-ignore
+@ts-expect-error
+
+unless technically justified and documented.
+
+Ensure:
+
+pnpm install
+
+works.
+
+Ensure:
+
+pnpm typecheck
+
+works.
+
+Ensure:
+
+pnpm build
+
+works.
+
+Ensure Turbo correctly understands package dependencies.
+
+Report:
+
+TYPECHECK
+BUILD
+TEST
+LINT
+REMAINING ERRORS
+```
+
+---
+
+# 04 — Minimal VS Code Extension
+
+```text
+Build the minimal working Uriel Studio VS Code extension.
+
+Extension:
+
+uriel-studio
+
+Display name:
+
+Uriel Studio
+
+Publisher:
+
+P1llar4
+
+Version:
+
+0.1.0
+
+Description:
+
+An authoring environment for manuscripts, worldbuilding, lore, and AI-assisted storytelling.
+
+Create or correct:
+
+apps/studio/src/extension.ts
+
+The extension must:
+
+1. Activate successfully.
+2. Register a test command.
+3. Register the Uriel Studio activity-bar container.
+4. Register the initial sidebar.
+5. Register the Uriel language.
+6. Load without activation errors.
+
+Keep extension.ts small.
+
+Use separate modules for:
+
+commands
+views
+providers
+configuration
+
+The first success criterion is:
+
+F5 → Extension Development Host → Uriel Studio activates.
+
+Do not implement the entire application yet.
+```
+
+---
+
+# 05 — Domain Model
+
+```text
+Implement the foundational Uriel domain model.
+
+Package:
+
+@uriel/entities
+
+Create types/schemas for:
+
+Project
+Series
+Book
+Act
+Chapter
+Scene
+Character
+Location
+Faction
+Organization
+Artifact
+Event
+Timeline
+LoreEntry
+Prophecy
+Law
+Decree
+Relationship
+Symbol
+MagicSystem
+Culture
+Religion
+ResearchItem
+Note
+PlotThread
+
+Every entity should have:
+
+id
+type
+name
+description
+metadata
+
+Use stable IDs.
+
+Keep the domain model independent of VS Code.
+
+Core business logic belongs in:
+
+@uriel/core
+
+Create documentation:
+
+docs/architecture/entity-model.md
+
+Use schema validation where appropriate.
+
+Do not create multiple incompatible representations of the same entity.
+```
+
+---
+
+# 06 — Project Format
+
+```text
+Design and implement the Uriel project format.
+
+A Uriel project should be human-readable and Git-friendly.
+
+Target structure:
+
+project/
+├── uriel.yaml
+├── manuscript/
+├── characters/
+├── locations/
+├── factions/
+├── artifacts/
+├── lore/
+├── timelines/
+├── prophecies/
+├── symbols/
+├── research/
+└── notes/
+
+The project manifest should support:
+
+- project identity
+- title
+- author
+- version
+- language
+- genre
+- series information
+- configuration
+
+Implement the project model in:
+
+@uriel/core
+
+Create:
+
+docs/architecture/project-format.md
+
+Do not create a proprietary binary format.
+
+Do not implement cloud synchronization.
+```
+
+---
+
+# 07 — Uriel Language
+
+```text
+Implement the foundation of the Uriel writing language.
+
+Uriel syntax should support concepts such as:
+
+BOOK
+CHAPTER
+SCENE
+CHARACTER
+LOCATION
+LORE
+PROPHECY
+LAW
+ARTIFACT
+TIMELINE
+FACTION
+AI
+USER
+NOTE
+
+Preserve existing syntax from the repository.
+
+Existing examples include:
+
+[PROPHECY]
+The stars remember.
+[/PROPHECY]
+
+AI_EMOTION: tension
+
+AI: The answer...
+
+AI_ASKS: What happens next?
+
+AI_SUGGEST: Increase the conflict.
+
+Implement syntax definitions in:
+
+@uriel/language
+
+Keep grammar definitions separate from parsing.
+
+Document the language in:
+
+docs/language/uri.md
+```
+
+---
+
+# 08 — Parser and AST
+
+```text
+Implement the Uriel parser foundation.
+
+Package:
+
+@uriel/parser
+
+Responsibilities:
+
+- tokenize source
+- parse blocks
+- parse metadata
+- identify entities
+- identify AI constructs
+- identify prophecy constructs
+- preserve source locations
+- report syntax diagnostics
+
+Create an AST containing appropriate node types such as:
+
+Document
+Block
+Paragraph
+Heading
+EntityBlock
+AIBlock
+ProphecyBlock
+Metadata
+ErrorNode
+
+Diagnostics must include:
+
+- message
+- severity
+- source position
+- range
+
+Write tests for:
+
+- valid documents
+- malformed blocks
+- AI blocks
+- prophecy blocks
+- entity references
+- metadata
+```
+
+---
+
+# 09 — Codex / Knowledge Graph
+
+```text
+Implement the Uriel Codex foundation.
+
+Uriel Studio must understand relationships between story entities.
+
+Examples:
+
+[[Uriel]]
+
+[[Uriel]] =[protects]=> [[Humanity]]
+
+[[Michael]] =[opposes]=> [[Uriel]]
+
+Support:
+
+- entity registration
+- entity lookup
+- relationship registration
+- relationship lookup
+- reverse lookup
+- reference tracking
+
+Relationship structure:
+
+source
+relation
+target
+metadata
+
+Use:
+
+@uriel/entities
+@uriel/core
+
+Do not build the visual graph yet.
+
+First make the underlying knowledge model reliable.
+
+Create:
+
+docs/features/codex.md
+
+Add unit tests.
+```
+
+---
+
+# 10 — Manuscript Engine
+
+```text
+Implement the manuscript domain engine.
+
+Support:
+
+Series
+Book
+Act
+Chapter
+Scene
+
+Relationships:
+
+Series → Books
+Book → Acts
+Book → Chapters
+Chapter → Scenes
+Scene → Characters
+Scene → Locations
+Scene → Plot Threads
+
+Provide utilities for:
+
+- chapter numbering
+- scene numbering
+- word counts
+- scene summaries
+- chapter summaries
+
+Do not build a rich editor yet.
+
+Build the underlying model and services first.
+```
+
+---
+
+# 11 — Character Engine
+
+```text
+Build the character management system.
+
+Characters should support:
+
+name
+aliases
+role
+age
+appearance
+personality
+goals
+fears
+wounds
+desires
+secrets
+relationships
+arc
+voice
+firstAppearance
+lastAppearance
+status
+notes
+
+Characters must be linkable to:
+
+- scenes
+- events
+- locations
+- factions
+- other characters
+
+Use the central entity model.
+
+Do not create a separate character database disconnected from the Codex.
+
+Add tests and documentation.
+```
+
+---
+
+# 12 — Worldbuilding Engine
+
+```text
+Build the worldbuilding foundation.
+
+Support:
+
+- locations
+- regions
+- cultures
+- religions
+- governments
+- factions
+- organizations
+- military orders
+- magic systems
+- technology
+- economies
+- languages
+- calendars
+
+All worldbuilding entities must integrate with the Codex.
+
+Reuse:
+
+@uriel/entities
+@uriel/core
+
+Avoid duplicate schemas.
+
+Create:
+
+docs/features/worldbuilding.md
+```
+
+---
+
+# 13 — Timeline Engine
+
+```text
+Implement the timeline system.
+
+Support:
+
+- dated events
+- undated events
+- relative dates
+- before/after relationships
+- event dependencies
+- characters involved
+- locations involved
+- causes
+- consequences
+
+The system must detect:
+
+- chronological conflicts
+- impossible ordering
+- duplicate event IDs
+
+Do not automatically rewrite the author's timeline.
+
+Report conflicts for review.
+
+Add unit tests.
+```
+
+---
+
+# 14 — Canon Engine
+
+```text
+Implement Uriel's canon management system.
+
+Supported statuses:
+
+CANON
+NON_CANON
+DRAFT
+DEPRECATED
+CONTRADICTED
+UNKNOWN
+
+Apply canon metadata to:
+
+- characters
+- events
+- relationships
+- locations
+- laws
+- lore
+- prophecies
+
+Implement basic contradiction detection.
+
+Example:
+
+Character age = 30
+
+Another source states:
+
+Character age = 42
+
+The system must identify the conflict.
+
+Do not automatically choose which value is correct.
+
+Return structured conflict records for author review.
+
+Document:
+
+docs/features/canon.md
+```
+
+---
+
+# 15 — Snippet Integration
+
+```text
+Integrate UrielSnips concepts into Uriel Studio without duplicating snippet logic unnecessarily.
+
+Create:
+
+@uriel/snippets
+
+Support categories:
+
+AI
+manuscript
+characters
+worldbuilding
+lore
+planning
+publishing
+Uriel mythic
+
+The snippet system should expose structured snippet definitions.
+
+Support existing snippets including:
+
+AI Emotion
+AI Line
+AI Note
+AI Question
+AI Suggest
+AI Thought
+AI Warning
+AI Story Prompt: Tone Enforcement
+AI Story Prompt: Scene Generation
+AI Story Prompt: Lore Expansion
+AI Conversation Archive
+AI Log: Single Exchange
+
+Daily Writing Session
+Creative Spark
+Final Author Command
+
+Do not copy hundreds of snippets into TypeScript source.
+
+Use maintainable snippet data files.
+
+Design the architecture so the standalone UrielSnips extension can eventually share the same library.
+```
+
+---
+
+# 16 — AI Architecture
+
+```text
+Build the AI architecture for Uriel Studio.
+
+Package:
+
+@uriel/ai
+
+Do not hard-code OpenAI, Anthropic, Google, or another provider into the core architecture.
+
+Create provider-neutral interfaces for:
+
+generate
+rewrite
+expand
+condense
+summarize
+brainstorm
+critique
+continuityCheck
+characterAnalysis
+loreAnalysis
+sceneGeneration
+dialogueGeneration
+
+AI request should support:
+
+prompt
+context
+project
+entities
+style
+constraints
+
+AI response should support:
+
+content
+metadata
+usage where available
+diagnostics
+provider information
+
+Support Uriel constructs:
+
+AI
+AI_EMOTION
+AI_NOTE
+AI_ASKS
+AI_SUGGEST
+AI_THOUGHT
+AI_WARNING
+
+Do not implement API credentials.
+
+Do not make external AI calls yet.
+
+Build the abstraction layer.
+```
+
+---
+
+# 17 — AI Context Engine
+
+```text
+Build a local AI context assembly engine.
+
+The engine should assemble relevant story context from:
+
+- current scene
+- current chapter
+- current book
+- characters
+- locations
+- factions
+- lore
+- timeline
+- relationships
+- canon
+- author instructions
+- style rules
+
+Create:
+
+ContextProvider
+ContextResolver
+ContextDocument
+
+The engine should answer:
+
+"What information from the project is relevant to this writing task?"
+
+Keep the context engine independent from AI providers.
+
+Do not send information externally.
+
+Add tests.
+```
+
+---
+
+# 18 — LSP
+
+```text
+Implement the Uriel Language Server foundation.
+
+Package:
+
+@uriel/lsp
+
+Support:
+
+- diagnostics
+- completion
+- hover
+- document symbols
+- references
+
+Completion sources should include:
+
+- Uriel keywords
+- entity names
+- block types
+- snippet prefixes
+
+Hover should provide useful information about recognized entities and syntax.
+
+The LSP must consume the shared parser rather than implementing a second parser.
+
+Do not duplicate grammar logic.
+```
+
+---
+
+# 19 — Studio Sidebar
+
+```text
+Build the initial Uriel Studio sidebar.
+
+Activity bar:
+
+Uriel Studio
+
+Views:
+
+Project
+Manuscript
+Codex
+Characters
+World
+Timeline
+AI
+
+Use real project data wherever available.
+
+Do not populate the UI with fake entities after the underlying systems exist.
+
+Implement modular TreeDataProviders.
+
+Keep UI logic separate from domain logic.
+```
+
+---
+
+# 20 — Commands
+
+```text
+Create a modular Uriel Studio command system.
+
+Initial commands:
+
+Uriel: Create Project
+Uriel: Open Project
+Uriel: Create Character
+Uriel: Create Chapter
+Uriel: Create Scene
+Uriel: Create Lore Entry
+Uriel: Create Prophecy
+Uriel: Open Codex
+Uriel: Open Timeline
+Uriel: Analyze Continuity
+Uriel: Insert Writing Template
+
+Do not put all commands in extension.ts.
+
+Create:
+
+commands/
+providers/
+services/
+
+Commands should call domain services rather than manipulating raw files directly.
+```
+
+---
+
+# 21 — Project Generator
+
+```text
+Implement:
+
+Uriel: Create Project
+
+Prompt for:
+
+- project name
+- author
+- genre
+- optional series name
+
+Generate:
+
+project/
+├── uriel.yaml
+├── manuscript/
+├── characters/
+├── locations/
+├── factions/
+├── artifacts/
+├── lore/
+├── timelines/
+├── prophecies/
+├── symbols/
+├── research/
+└── notes/
+
+Create useful starter files.
+
+Never overwrite an existing project without explicit confirmation.
+
+Add tests for project generation.
+```
+
+---
+
+# 22 — Writing Workflow
+
+```text
+Implement author workflow tools.
+
+Support structured records for:
+
+Daily Writing Session
+Creative Spark
+Writing Goal
+Word Count
+Session Notes
+Next Step
+Project Milestone
+Revision Marker
+
+Integrate with the existing snippet/template system.
+
+Keep structured project metadata separate from manuscript prose where practical.
+```
+
+---
+
+# 23 — Theme and Design System
+
+```text
+Build the Uriel Studio design system.
+
+Packages:
+
+@uriel/theme
+@uriel/ui
+@uriel/icons
+
+Design goals:
+
+- dark literary interface
+- high readability
+- restrained mythic aesthetic
+- strong typography hierarchy
+- minimal visual noise
+- accessible contrast
+
+Create centralized design tokens for:
+
+background
+foreground
+accent
+border
+spacing
+typography
+status
+severity
+
+Do not hard-code UI colors throughout the codebase.
+
+Create:
+
+docs/design-system.md
+```
+
+---
+
+# 24 — Export Architecture
+
+```text
+Build the manuscript export architecture.
+
+Package:
+
+@uriel/exporter
+
+Create provider interfaces for:
+
+Markdown
+HTML
+DOCX
+PDF
+EPUB
+
+Initially implement:
+
+Markdown
+HTML
+
+Preserve:
+
+- title
+- headings
+- chapter structure
+- scene structure
+- metadata
+- footnotes where supported
+
+Design the API so DOCX/PDF/EPUB can be added later without rewriting the core exporter.
+```
+
+---
+
+# 25 — Test Architecture
+
+```text
+Create a serious test strategy.
+
+Test:
+
+@uriel/core
+@uriel/entities
+@uriel/language
+@uriel/parser
+@uriel/lsp
+@uriel/snippets
+@uriel/templates
+@uriel/ai
+@uriel/exporter
+
+Test behaviors, not merely file existence.
+
+Add integration tests for:
+
+language → parser
+parser → AST
+AST → entities
+entities → Codex
+project → sidebar
+commands → project generator
+
+Include regression tests for every significant bug discovered during development.
+```
+
+---
+
+# 26 — CI/CD
+
+```text
+Create GitHub Actions CI for Uriel Studio.
+
+CI must run:
+
+pnpm install
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+
+Use the repository's existing package manager and lockfile.
+
+CI must fail on:
+
+TypeScript errors
+test failures
+lint failures
+build failures
+
+Do not automatically publish Marketplace releases yet.
+
+Do not add unnecessary CI complexity.
+```
+
+---
+
+# 27 — Documentation
+
+```text
+Create maintainable Uriel Studio documentation.
+
+Structure:
+
+docs/
+├── architecture/
+│   ├── overview.md
+│   ├── entity-model.md
+│   ├── project-format.md
+│   └── dependencies.md
+│
+├── language/
+│   └── uri.md
+│
+├── features/
+│   ├── manuscript.md
+│   ├── codex.md
+│   ├── characters.md
+│   ├── worldbuilding.md
+│   ├── timeline.md
+│   ├── canon.md
+│   └── ai.md
+│
+├── development/
+│   ├── setup.md
+│   ├── testing.md
+│   └── contributing.md
+│
+└── design/
+    └── design-system.md
+
+Update README.md.
+
+Documentation must describe implemented behavior accurately.
+
+Never document future functionality as if it already exists.
+```
+
+---
+
+# 28 — Security Audit
+
+```text
+Perform a security audit of Uriel Studio.
+
+Check for:
+
+- API keys
+- credentials
+- tokens
+- unsafe filesystem writes
+- unsafe shell execution
+- path traversal
+- unvalidated input
+- arbitrary file access
+- accidental personal information
+- unsafe AI provider configuration
+
+Do not commit secrets.
+
+Add appropriate .gitignore entries.
+
+Create SECURITY.md.
+
+Future AI providers must receive credentials through secure configuration mechanisms.
+
+Do not weaken security for convenience.
+```
+
+---
+
+# 29 — Performance Audit
+
+```text
+Audit Uriel Studio for performance risks.
+
+Consider:
+
+- large manuscripts
+- thousands of Codex entities
+- relationship traversal
+- repeated parsing
+- filesystem watchers
+- LSP completion
+- timeline calculations
+- AI context assembly
+- large documents
+
+Do not prematurely optimize.
+
+Identify measurable or architecturally obvious risks.
+
+Implement only justified low-risk improvements.
+
+Document future optimization opportunities.
+```
+
+---
+
+# 30 — Final Genesis Audit
+
+```text
+Act as the senior release engineer for Uriel Studio.
+
+Repository:
+
+https://github.com/P1llar4/uriel-studio.git
+
+Do NOT:
+
+- publish
+- push
+- create a Marketplace release
+- expose credentials
+
+Run the complete validation suite:
+
+git status
+pnpm install
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm build
+
+If the project contains a VS Code extension package, create a local VSIX when possible.
+
+Inspect:
+
+- monorepo
+- workspace dependencies
+- TypeScript
+- extension manifest
+- activation
+- commands
+- views
+- language definitions
+- parser
+- AST
+- entities
+- Codex
+- timeline
+- manuscript model
+- canon system
+- AI abstraction
+- context engine
+- snippets
+- tests
+- documentation
+- CI
+- security
+
+Fix safe errors.
+
+Do not suppress errors merely to achieve a green build.
+
+After fixing anything, run the validation suite again.
+
+Return exactly:
+
+URIEL STUDIO GENESIS AUDIT
+
+BUILD:
+PASS/FAIL
+
+TYPECHECK:
+PASS/FAIL
+
+TESTS:
+PASS/FAIL
+
+LINT:
+PASS/FAIL
+
+EXTENSION:
+PASS/FAIL
+
+PACKAGING:
+PASS/FAIL
+
+WORKSPACES:
+<number>
+
+PACKAGES:
+<number>
+
+COMMANDS:
+<number>
+
+VIEWS:
+<number>
+
+ENTITY TYPES:
+<number>
+
+TEST FILES:
+<number>
+
+DOCUMENTATION FILES:
+<number>
+
+ERRORS:
+<list>
+
+WARNINGS:
+<list>
+
+FILES ADDED:
+<list>
+
+FILES MODIFIED:
+<list>
+
+REMAINING WORK:
+<list>
+
+NEXT SPRINT:
+<one concrete recommendation>
+```
+
+---
+
+# Claude Execution Order
+
+Use the prompts in this sequence:
+
+```text
+01  Genesis Audit
+ ↓
+02  Foundation
+ ↓
+03  TypeScript Repair
+ ↓
+04  VS Code Extension
+ ↓
+05  Domain Model
+ ↓
+06  Project Format
+ ↓
+07  Uriel Language
+ ↓
+08  Parser / AST
+ ↓
+09  Codex
+ ↓
+10  Manuscript
+ ↓
+11  Characters
+ ↓
+12  Worldbuilding
+ ↓
+13  Timeline
+ ↓
+14  Canon
+ ↓
+15  Snippets
+ ↓
+16  AI Architecture
+ ↓
+17  AI Context
+ ↓
+18  LSP
+ ↓
+19  Sidebar
+ ↓
+20  Commands
+ ↓
+21  Project Generator
+ ↓
+22  Writing Workflow
+ ↓
+23  Theme/UI
+ ↓
+24  Export
+ ↓
+25  Tests
+ ↓
+26  CI
+ ↓
+27  Documentation
+ ↓
+28  Security
+ ↓
+29  Performance
+ ↓
+30  Genesis Audit
+```
+
+## Recommended split between the two projects
+
+The clean architecture is:
+
+```text
+                    URIEL ECOSYSTEM
+                           │
+             ┌─────────────┴─────────────┐
+             │                           │
+        UrielSnips                  Uriel Studio
+             │                           │
+      Writing snippets             Full authoring IDE
+             │                           │
+      Templates/prompts            Project management
+             │                     Manuscript
+             │                     Characters
+             │                     Codex
+             │                     Timeline
+             │                     Worldbuilding
+             │                     AI
+             │                     LSP
+             │                     Export
+             │                           │
+             └───────────┬───────────────┘
+                         │
+                  Shared Uriel Core
+                         │
+              ┌──────────┼──────────┐
+              │          │          │
+           Entities    Language    Schemas
+              │          │          │
+              └──────────┼──────────┘
+                         │
+                       Parser
+```
+
+**The critical design decision:** `UrielSnips` should remain lightweight and independently installable, while **Uriel Studio becomes the full platform**. The shared data/schema layer should eventually prevent the two projects from developing incompatible definitions of characters, lore, scenes, AI blocks, and other Uriel concepts.
